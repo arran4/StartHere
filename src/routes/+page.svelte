@@ -76,3 +76,7 @@
     <button on:click|preventDefault={() => Refresh()}>Refresh</button><br/>
     <button on:click|preventDefault={() => Logout()}>Logout</button><br/>
 {/if}
+
+<svelte:head>
+    <title>Start Here</title>
+</svelte:head>
