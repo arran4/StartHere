@@ -3,7 +3,8 @@
 import {Octokit} from "octokit";
 import User from "$lib/stores/user";
 import type {UserAuthDetails} from "$lib/stores/user";
-import links, {GetLinks} from "$lib/stores/links";
+import links from "$lib/stores/links";
+import {GetDataFromGithub} from "$lib/getDataFromGithub";
 
 export async function LoginUsingToken(githubToken : string, storeLoc : "local" | "session" = "session") : Promise<void> {
     const octokit = new Octokit({ auth: githubToken });
@@ -26,5 +27,5 @@ export async function LoginUsingToken(githubToken : string, storeLoc : "local" |
     }
     User.set(user)
 
-    links.set(await GetLinks(user))
+    links.set(await GetDataFromGithub(user))
 }

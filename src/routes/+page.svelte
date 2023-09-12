@@ -3,14 +3,15 @@
     import {LoginUsingToken} from "$lib/tokenbased";
     import loginError from "$lib/stores/loginError";
     import {onMount} from "svelte";
-    import links, {GetLinks} from "$lib/stores/links";
+    import links from "$lib/stores/links";
+    import {GetDataFromGithub} from "$lib/getDataFromGithub";
 
     let githubToken : string = ""
     let loading : boolean = true
     function Refresh() {
         $links = null
         if ($user) {
-            GetLinks($user).then(links.set)
+            GetDataFromGithub($user).then(links.set)
         }
     }
 
@@ -58,14 +59,16 @@
     </p>
     {#if $links}
         {#each ($links?.Columns??[]) as column}
-            {#each (column?.Categories??[]) as category}
-                <h1>{category.Name}</h1>
-                <ui>
-                    {#each (category.Links??[]) as link}
-                        <li><a href={link.Link}>{link.Name}</a></li>
-                    {/each}
-                </ui>
-            {/each}
+            <div style="display: inline-block; padding: 20px">
+                {#each (column?.Categories??[]) as category}
+                    <h1>{category.Name}</h1>
+                    <ui>
+                        {#each (category.Links??[]) as link}
+                            <li><a href={link.Link}>{link.Name}</a></li>
+                        {/each}
+                    </ui>
+                {/each}
+            </div>
         {/each}
     {:else}
         <p>
