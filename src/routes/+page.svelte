@@ -5,14 +5,25 @@
     import {onMount} from "svelte";
     import links from "$lib/stores/links";
     import {GetDataFromGithub} from "$lib/getDataFromGithub";
+    import branches from "$lib/stores/branches";
+    import tags from "$lib/stores/tags";
 
     let githubToken : string = ""
+    let ref : string
+    let selectedRef : string | undefined
     let loading : boolean = true
+
     function Refresh() {
         $links = null
         if ($user) {
-            GetDataFromGithub($user).then(links.set)
+            GetDataFromGithub($user, selectedRef).then(links.set)
         }
+    }
+
+    function SwitchVersion() {
+        selectedRef = ref
+        console.log(selectedRef)
+        Refresh()
     }
 
     onMount(() => {
@@ -76,8 +87,16 @@
         </p>
     {/if}
     <hr/>
+    Versions:
+    <select bind:value={ref}>
+        <option value={undefined}>Default</option>
+        {#each ($branches??[]) as branch}<option value={branch.Ref}>Branch: {branch.Name}</option>{/each}
+        {#each ($tags??[]) as tag}<option value={tag.Ref}>Tag: {tag.Name}</option>{/each}
+    </select>
+    <button on:click|preventDefault={() => SwitchVersion()}>Switch Version</button><br />
     <button on:click|preventDefault={() => Refresh()}>Refresh</button><br/>
     <button on:click|preventDefault={() => Logout()}>Logout</button><br/>
+    <a href={`https://github.dev/${$user?.Username}/MyStart/blob/main/links.json`}>Edit</a><br/>
 {/if}
 
 <svelte:head>
