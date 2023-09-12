@@ -1,6 +1,7 @@
 import {writable} from "svelte/store";
 import {type UserAuthDetails} from "$lib/stores/user";
 import {Octokit} from "octokit";
+import exampledefault from "./exampledefault.json" assert { type: "trext" };
 
 export interface Link {
     Name: string
@@ -41,7 +42,7 @@ export async function GetLinks(user : UserAuthDetails): Promise<LinkStructure> {
             return {}
         }
     }
-    let contents = "{}"
+    let contents = exampledefault
     try {
         const result = await octokit.rest.repos.getContent({
             owner: user.Username,

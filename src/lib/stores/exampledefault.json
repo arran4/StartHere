@@ -1,0 +1,17 @@
+{
+  "Columns": [
+    {
+      "Categories": [
+        {
+          "Name": "Search",
+          "Links": [
+            {
+              "Name": "Google",
+              "Link": "https://www.google.com"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
