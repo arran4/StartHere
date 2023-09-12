@@ -15,8 +15,6 @@ export async function LoginUsingToken(githubToken : string, storeLoc : "local" |
         Token: githubToken,
         Username: login,
     }
-    console.log("Hello, %s", login);
-    
     switch (storeLoc) {
         case "session":
             sessionStorage.setItem("user", JSON.stringify(user));

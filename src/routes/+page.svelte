@@ -22,7 +22,6 @@
 
     function SwitchVersion() {
         selectedRef = ref
-        console.log(selectedRef)
         Refresh()
     }
 
