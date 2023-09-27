@@ -72,3 +72,10 @@ Which will look like this:
 ![img_1.png](doc/img_2.png)
 
 You can customize it with any details you want.
+
+# Features
+
+One of the key features of this version is that you can view branches and tags at the bottom of the page. The intention
+was to have a look at the snapshots of the past but it could be used for pages, or sets or anything really.
+
+![img_3.png](doc/img_3.png)
