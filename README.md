@@ -8,7 +8,7 @@ I feel that, that was probably a mistake too as JSON is too verbose.
 
 To checkout the site, start here: https://arran4.github.io/StartHere/ (See the getting setup guide below.)
 
-![img.png](doc/img_2.png)
+![img_2.png](doc/img_2.png)
 
 ![img.png](doc/img.png)
 
@@ -69,7 +69,7 @@ called `links.json`, it's contents should be based off:
 
 Which will look like this:
 
-![img_1.png](doc/img_2.png)
+![img_2.png](doc/img_2.png)
 
 You can customize it with any details you want.
 
@@ -79,3 +79,10 @@ One of the key features of this version is that you can view branches and tags a
 was to have a look at the snapshots of the past but it could be used for pages, or sets or anything really.
 
 ![img_3.png](doc/img_3.png)
+
+# Github Token permissions screen cap
+
+In case you don't know what the fine grain permissions should look like it should look like this:
+
+![img_4.png](doc/img_4.png)
+
