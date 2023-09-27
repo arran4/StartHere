@@ -63,6 +63,9 @@
         a repo called: "MyStart" under your username. It can be empty. (Use fine-grained tokens) If the repo `MyStart` doesn't exist, either
         create it with a "readme.md" file, or grant "Administrator" privileges with Read/Write and restrict it later.
     </p>
+    <p>
+        More instructions and details can be found here: <a href="https://github.com/arran4/StartHere">https://github.com/arran4/StartHere</a>
+    </p>
 {:else}
     <p>
         Hi {$user?.Username ?? "No name"}
