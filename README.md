@@ -1,5 +1,7 @@
 # StartHere
 
+Obsoleted by Github lack of Oauth2 for SPA apps, thus prioritzing: https://github.com/arran4/gobookmarks/
+
 This was an attempt to port my 199x-2007 project "Startpage" / "Bookmarks" to github pages. It wasn't successful as you need
 to use a github token as github does not support SPA Oauth2 logins. You can still use it, however the requirement to use
 tokens has made it rather insecure as you can't use it safely on public machines. (Although if you're comfortable with a 
